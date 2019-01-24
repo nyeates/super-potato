@@ -14,4 +14,4 @@ systemctl enable fail2ban
 fail2ban-client reload
 fail2ban-client status sshd
 
-echo -e "\n*****\nFail2ban changed to *permanently* ban 7+ tries\nTHIS INCLUDES YOURSELF!\n*****”
+echo -e "\n*****\nFail2ban changed to *permanently* ban 7+ tries\nTHIS INCLUDES YOURSELF!\n*****"
