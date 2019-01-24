@@ -4,4 +4,4 @@ if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; ex
 
 chmod -x /etc/update-motd.d/*
 
-echo -e "\n*****\nMOTD turned off\nTo turn MOTD back on: sudo chmod +x /etc/update-motd.d/*\n*****”
+echo -e "\n*****\nMOTD turned off\nTo turn MOTD back on: sudo chmod +x /etc/update-motd.d/*\n*****"
