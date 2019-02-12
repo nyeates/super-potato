@@ -14,4 +14,4 @@ systemctl enable fail2ban
 fail2ban-client reload
 fail2ban-client status sshd
 
-echo -e "\n*****\nFail2ban changed to *permanently* ban 7+ tries\nTHIS INCLUDES YOURSELF!\n*****"
+echo -e "\n*****\nFail2ban changed to *permanently* ban after 7+ tries\nTHIS INCLUDES YOURSELF!\nTo remove ban, login via KVM and run this: fail2ban-client set sshd unbanip 108.45.25.217\n*****"
