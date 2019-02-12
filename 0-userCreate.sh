@@ -17,6 +17,12 @@ echo -e "\n"
 adduser $newUser
 usermod -aG sudo $newUser
 
+# Check that user was added to sudo group
+echo -e "\n*****\nCheck that user was added to sudo group\n"
+cat /etc/group | grep sudo
+groups $newUser
+echo -e "*****\n\n"
+
 apt update; apt upgrade
 
 echo -e "\n*****\nAlternate User `$newUser` Created\n*****"
