@@ -6,7 +6,7 @@ if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; ex
 apt install fail2ban
 
 # Change to permanently ban if 7+ logins to SSH
-echo -e "# Permanently ban 7+ tries\n[DEFAULT]\nbantime = -1\n\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 7" > /etc/fail2ban/jail.local
+echo -e "# 1-Day-Ban upon 7+ tries\n[DEFAULT]\nbantime = 86400\n\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 7" > /etc/fail2ban/jail.local
 
 # Start Fail2Ban service
 systemctl start fail2ban
@@ -14,4 +14,4 @@ systemctl enable fail2ban
 fail2ban-client reload
 fail2ban-client status sshd
 
-echo -e "\n*****\nFail2ban changed to *permanently* ban after 7+ tries\nTHIS INCLUDES YOURSELF!\nTo remove ban, login via KVM and run this: fail2ban-client set sshd unbanip 108.45.25.217\n*****"
+echo -e "\n*****\nFail2ban changed to ban for 1-day after 7+ tries\nTHIS INCLUDES YOURSELF!\nTo remove ban, login via KVM and run this: fail2ban-client set sshd unbanip 108.45.25.217\n*****"
