@@ -2,6 +2,7 @@
 echo -e "*****\nCreate Alternate User\n*****\n"
 if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
 
+echo -e "\n***** Set ROOT password"
 echo -n "Do you want to set a new passwd for the current root user (y/n)? "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
@@ -11,6 +12,8 @@ else
     echo -e "\n"
 fi
 
+echo -e "\n***** Create USER account"
+echo -e "Now lets create a new non-root user for you to login as."
 echo -e "Enter new user name: "
 read newUser
 echo -e "\n"
@@ -23,6 +26,7 @@ cat /etc/group | grep sudo
 groups $newUser
 echo -e "*****\n\n"
 
+echo -e "\n***** Upgrade all Packages"
 apt update; apt upgrade
 
 echo -e "\n*****\nAlternate User `$newUser` Created\n*****"
