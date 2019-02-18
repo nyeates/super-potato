@@ -25,6 +25,7 @@ echo -e "\n***** Install Docker-ce"
 sudo apt update
 sudo apt install docker-ce
 
+echo -e "\n***** Add user to docker group"
 echo -e "Enter user name to add to docker: "
 read user
 
