@@ -15,6 +15,8 @@ echo -e "\n***** Start Fail2Ban Service"
 systemctl start fail2ban
 systemctl enable fail2ban
 fail2ban-client reload
+
+echo -e "\n$ fail2ban-client status sshd\n"
 fail2ban-client status sshd
 
 echo -e "\n*****\nFail2ban changed to ban for 1-day after 7+ tries\nTHIS INCLUDES YOURSELF!\nTo remove ban, login via KVM and run this: fail2ban-client set sshd unbanip 108.45.25.217\n*****"
