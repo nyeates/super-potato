@@ -21,4 +21,4 @@ echo -e "Press Enter... "; read shit
 echo -e "\n***** Tmn Details:"
 pip3 show tmn
 
-echo -e "\n*****\ntmn has been installed\n*****"
+echo -e "\n*****\ntmn has been installed\nYou can now start tmn, Ex:\ntmn start --name Atlantis --net mainnet --pkey cf03cb58************\n*****"
