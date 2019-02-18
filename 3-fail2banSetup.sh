@@ -2,12 +2,15 @@
 echo -e "*****\nFAIL2BAN INTRUSTION PROTECTION SETUP\n*****\n\n"
 if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
 
+echo -e "\n***** Installing Fail2Ban"
 # Install needed packages
 apt install fail2ban
 
+echo -e "\n***** Modifying Fail2Ban Settings\n"
 # Change to permanently ban if 7+ logins to SSH
 echo -e "# 1-Day-Ban upon 7+ tries\n[DEFAULT]\nbantime = 86400\n\n[sshd]\nenabled = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 7" > /etc/fail2ban/jail.local
 
+echo -e "\n***** Start Fail2Ban Service"
 # Start Fail2Ban service
 systemctl start fail2ban
 systemctl enable fail2ban
