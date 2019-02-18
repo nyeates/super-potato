@@ -33,6 +33,6 @@ echo -e "\n*****\nCheck that user was added to sudo group"
 sudo usermod -aG docker $user
 cat /etc/group | grep docker
 groups $user
-echo -e "*****\n\n"
+echo -e "*****\n"
 
-echo -e "\n*****\nPython and Docker installed\nLOG OUT CURRENT USER AND LOG BACK IN\nLOG OUT CURRENT USER AND LOG BACK IN\nLOG OUT CURRENT USER AND LOG BACK IN\n*****"
+echo -e "\n*****\nPython and Docker installed\nLOG OUT CURRENT USER AND LOG BACK IN\nLOG OUT CURRENT USER AND LOG BACK IN!!!\nLOG OUT CURRENT USER AND LOG BACK IN!!!!!\n*****"
