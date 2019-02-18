@@ -2,10 +2,11 @@
 echo -e "\n*****\nPYTHON AND DOCKER INSTALL\n*****\n"
 if ((${EUID:-0} || "$(id -u)")); then echo "Running as user: $EUID $id"; else echo "ERROR: Needs to be run as NON ROOT."; exit 100; fi
 
+echo -e "\n***** Intall required packages"
 # Might need these
-#apt install dirmngr
-#apt install gpg-agent
-#apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8
+sudo apt install dirmngr
+sudo apt install gpg-agent
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8
 
 echo -e "\n***** Install Python3"
 sudo apt install python3
