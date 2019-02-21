@@ -1,6 +1,6 @@
 #!/bin/bash
 echo -e "*****\nTOMO FIREWALL SETUP\n*****"
-if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
+if ((${EUID:-0} || "$(id -u)")); then echo "\nERROR: Needs to be run as root."; exit 100; fi
 
 # Tomo port - used for talking to and from other node clients
 port="30303"
