@@ -21,9 +21,10 @@ echo -e "Press Enter... "; read shit
 echo -e "\n***** Tmn Details:"
 pip3 show tmn
 
-echo -e "\n***** Assure $PATH contains /home/[user]/.local/bin :"
+echo -e "\n***** Assure \$PATH env-variable contains /home/[user]/.local/bin :"
 echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
 source $HOME/.bashrc
+echo $PATH
 echo -e "Press Enter... "; read shit
 
 echo -e "\n*****\ntmn has been installed\nYou can now start tmn, Ex:\ntmn start --name Atlantis --net mainnet --pkey cf03cb58************\n*****"
