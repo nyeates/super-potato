@@ -27,4 +27,7 @@ source $HOME/.bashrc
 echo $PATH
 echo -e "Press Enter... "; read shit
 
-echo -e "\n*****\ntmn has been installed\nYou can now start tmn, Ex:\ntmn start --name Atlantis --net mainnet --pkey cf03cb58************\n*****"
+echo -e "\n*****\ntmn has been installed\nNext commands:\n\ntmn start --name Atlantis --net mainnet --pkey cf03cb58...."
+echo -e "docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"eth.blockNumber\""
+echo -e "docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"net.peerCount\"\n*****"
+
