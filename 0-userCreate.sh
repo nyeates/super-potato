@@ -1,8 +1,8 @@
 #!/bin/bash
-echo -e "*****\nCreate Alternate User\n*****\n"
+echo -e "\n*****\nCreate Alternate User\n*****\n"
 if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
 
-echo -e "\n***** Set ROOT password"
+echo -e "***** Set ROOT password"
 echo -n "Do you want to set a new passwd for the current root user (y/n)? "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
@@ -24,7 +24,7 @@ usermod -aG sudo $newUser
 echo -e "\n*****\nCheck that user was added to sudo group\n"
 cat /etc/group | grep sudo
 groups $newUser
-echo -e "*****\n\n"
+echo -e "*****\n"
 
 echo -e "\n***** Upgrade all Packages"
 apt update; apt upgrade
