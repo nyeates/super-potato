@@ -27,6 +27,7 @@ groups $newUser
 echo -e "*****\n"
 
 echo -e "\n***** Upgrade all Packages"
+apt install screen; apt install top; apt install iotop; apt install vim
 apt update; apt upgrade
 
 echo -e "\n*****\nAlternate User `$newUser` Created\n*****"
