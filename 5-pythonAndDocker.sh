@@ -4,8 +4,7 @@ if ((${EUID:-0} || "$(id -u)")); then echo "Running as user: $EUID $id"; else ec
 
 echo -e "\n***** Intall required packages"
 # Might need these
-sudo apt install dirmngr
-sudo apt install gpg-agent
+sudo apt install dirmngr gpg-agent gnupg-agent
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8
 
 echo -e "\n***** Install Python3"
@@ -23,7 +22,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 
 echo -e "\n***** Install Docker-ce"
 sudo apt update
-sudo apt install docker-ce
+sudo apt install docker-ce docker-ce-cli containerd.io
 
 echo -e "\n***** Add user to docker group"
 echo -e "Enter user name to add to docker: "
