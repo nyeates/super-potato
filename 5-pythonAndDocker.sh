@@ -34,4 +34,7 @@ cat /etc/group | grep docker
 groups $user
 echo -e "*****\n"
 
-echo -e "\n*****\nPython and Docker installed\nLOG OUT CURRENT USER AND LOG BACK IN\nLOG OUT CURRENT USER AND LOG BACK IN!!!\nLOG OUT CURRENT USER AND LOG BACK IN!!!!!\n*****"
+echo -e "\n***** Run Hello World Test"
+docker run hello-world
+
+echo -e "\n*****\nPython and Docker installed\n*****"
