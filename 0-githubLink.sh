@@ -3,16 +3,14 @@ echo -e "\n*****\nLink Repo to Github\n*****\n"
 #if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
 
 echo -e "***** Set github name and email - it needs these to do commits in future"
-echo -e "If you havent setup an email address already, use: git config --global user.email \"[EMAIL_HERE]\""
+echo -e "If you havent setup an email address already, use: git config --global user.email \"[EMAIL_HERE]\"\n"
 sudo apt install git
 git config --global user.name "N"
 git status
 
-echo -e "\n***** Create USER account"
+echo -e "\n*****\nGithub repo sync'ed\n*****\n"
 
-echo -e "\n***** Upgrade all Packages"
-
-echo -e "\n*****\nGithub repo sync'ed\n"
+echo -e "*****"
 echo -e "Important Git commands:"
 echo -e "git status"
 echo -e "git add *"
