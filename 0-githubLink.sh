@@ -1,14 +1,20 @@
 #!/bin/bash
-echo -e "\n*****\nLink Repo to Github\n*****\n"
+echo -e "\n*****\nGITHUB SETUP\n*****\n"
 #if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
 
-echo -e "***** Set github name and email"
-echo -e "Git needs both a name and email address to do commits in the future."
-echo -e "*****"
+email="213291+nyeates@users.noreply.github.com"
+name="N"
 
 sudo apt install git
-git config --global user.email "213291+nyeates@users.noreply.github.com"
-git config --global user.name "N"
+
+echo -e "\n***** Set github name and email"
+echo -e "Git needs both a name and email address to do commits in the future."
+git config --global user.email "$email"
+git config --global user.name "$name"
+echo -e "user.email set to $email"
+echo -e "user.name set to $name"
+echo -e "*****\n"
+
 git status
 
 echo -e "\n*****\nGithub repo sync'ed\n*****\n"
