@@ -11,6 +11,7 @@ display_help ()
 	echo -e "git commit"
 	echo -e "git commit -m \"my changes\"\n"
 	echo -e "git push origin master"
+	echo -e "git pull origin master"
 	echo -e "  Note: If you have 2fa setup, you will need the SSH token instead of password"
 	echo -e "*****"
 }
