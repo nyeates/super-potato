@@ -30,7 +30,7 @@ echo -e "\n***** Upgrade all Packages"
 apt install screen; apt install top; apt install iotop; apt install vim
 apt update; apt upgrade
 
-echo -e "\n*****\nAlternate User $newUser Created\n*****"
+echo -e "\n*****\nAlternate User $newUser Created"
 echo -e "Press ENTER to RESTART... "
 read restart
 reboot
