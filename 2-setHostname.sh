@@ -14,7 +14,4 @@ vim -c ':2s/\(.\{-}\zs'"$oldHostname"'\)\{2}/'"$newHostname"'/' -c 'wq' /etc/hos
 echo -e "Press Enter... "; read shit
 
 # Restart SSHD service
-echo -e "\n*****\nHostname Changed to $newHostname"
-echo -e "Press ENTER to RESTART... "
-read restart
-reboot
+echo -e "\n*****\nHostname Changed to $newHostname\n*****""
