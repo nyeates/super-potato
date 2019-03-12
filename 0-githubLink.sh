@@ -1,6 +1,9 @@
 #!/bin/bash
 #if ((${EUID:-0} || "$(id -u)")); then echo "ERROR: Needs to be run as root."; exit 100; fi
 
+# See Main Execution below the following functions...
+
+# Just display helpful git commands
 display_help ()
 {
 	echo -e "*****"
@@ -16,6 +19,7 @@ display_help ()
 	echo -e "*****"
 }
 
+# Setup necessary git variables
 run_script ()
 {
 	echo -e "\n*****\nGITHUB SETUP\n*****\n"
@@ -40,6 +44,7 @@ run_script ()
 	display_help
 }
 
+# Main Execution
 # If an argument containing "?" is passed when this shell script is run
 # This allows us to run as "0-githubLink.sh ?" and get only the command info back
 # https://superuser.com/questions/186272/check-if-any-of-the-parameters-to-a-bash-script-match-a-string
