@@ -33,8 +33,8 @@ run_script ()
 	echo -e "Git needs both a name and email address to do commits in the future."
 	git config --global user.email "$email"
 	git config --global user.name "$name"
-	echo -e "user.email set to $email"
-	echo -e "user.name set to $name"
+	echo -e "\033[1muser.email set to $email"
+	echo -e "user.name set to $name\033[0m"
 	echo -e "*****\n"
 	
 	git status
