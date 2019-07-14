@@ -12,7 +12,7 @@ apt install ufw
 echo -e "\n***** Changing SSHD port in config file"
 echo -e "$ vim /etc/ssh/sshd_config"
 # Change SSHD port in config file
-vim -c '%s/#Port 22/Port '"$port"'/c' -c 'wq' /etc/ssh/sshd_config
+vim -c '%s/Port 22/Port '"$port"'/c' -c 'wq' /etc/ssh/sshd_config
 
 echo -e "\n***** Setting up firewall"
 # Setup firewall
