@@ -18,7 +18,7 @@ echo -e "THE 2nd LINE NEEDS TO LOOK SIMILAR TO BELOW. YOU MAY WANT TO COPY THE 2
 
 echo -e "================="
 echo -e "127.0.0.1       localhost"
-echo -e "78.31.64.253    vps1729333.fastwebserver.de kong"
+echo -e "165.2.133.199    vps1729333.fastwebserver.de    $newHostname"
 echo -e ""
 echo -e "# The following lines are desirable for IPv6 capable hosts"
 echo -e "::1     localhost ip6-localhost ip6-loopback"
