@@ -9,17 +9,24 @@ echo -e "***** Set Hostname"
 echo -e "Enter the hostname you would like to use: "
 read newHostname
 
-hostnamectl set-hostname $newHostname
 echo -e "\n$ hostnamectl set-hostname $newHostname\nPress Enter... "; read shit
+hostnamectl set-hostname $newHostname
 
 # Add new hostname to /etc/hosts
-echo -e "YOU WILL NEXT ENTER VI TEXT EDITOR AND ADD/EDIT A LINE FOR THE NEW HOSTNAME\n"
-echo -e "THE 2nd LINE NEEDS TO LOOK SIMILAR TO BELOW. YOU MAY WANT TO COPY THE 2nd LINE, SO THAT YOU CAN REPLICATE IT."
-echo -e "To edit, write, and close vi, you will need to know its commands..."
+echo -e "YOU WILL NEXT ENTER VI TEXT EDITOR AND ADD/EDIT A LINE FOR THE NEW HOSTNAME."
+echo -e "THE 2nd LINE NEEDS TO LOOK SIMILAR TO BELOW. YOU MAY WANT TO COPY THE 2nd LINE, SO THAT YOU CAN REPLICATE IT.\n"
+
 echo -e "================="
 echo -e "127.0.0.1       localhost"
-echo -e "78.31.64.253    vps1836265.fastwebserver.de bb-8"
-echo -e "================="
+echo -e "78.31.64.253    vps1729333.fastwebserver.de kong"
+echo -e ""
+echo -e "# The following lines are desirable for IPv6 capable hosts"
+echo -e "::1     localhost ip6-localhost ip6-loopback"
+echo -e "ff02::1 ip6-allnodes"
+echo -e "ff02::2 ip6-allrouters"
+echo -e "=================\n"
+
+echo -e "To edit, write, and close vi, you will need to know its commands..."
 echo -e "$ vim /etc/hosts"
 echo -e "Press Enter... "; read shit
 
