@@ -40,6 +40,11 @@ echo -e "\n***** /etc/hosts file:"
 cat /etc/hosts
 echo -e "*****\n"
 
+# Show hostname commands output to assure it was changed
+echo -e "\n***** hostname -s command:"
+hostname -s
+echo -e "*****\n"
+
 commandResult=$?
 if [ $commandResult -eq 0 ]; then
 	echo -e "\n*****\nHostname Changed to $newHostname\n*****"
