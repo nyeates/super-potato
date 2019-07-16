@@ -23,9 +23,11 @@ sudo apt install software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo -e "Press Enter... "; read shit
 
-echo -e "\n***** Check fingerprint and setup 'stable' repo"
+echo -e "\n*****\nCHECK fingerprint and setup 'stable' repo"
+echo -e "\n***** Key results should look like:  9DC8 5822 .... 0EBF CD88"
 apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+echo -e "*****\n"
 echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Install Docker-ce"
@@ -39,7 +41,7 @@ echo -e "\n***** Add user to docker group"
 echo -e "Enter user name to add to docker: "
 read user
 
-echo -e "\n*****\nCheck that user was added to sudo group"
+echo -e "\n*****\nCHECK that user was added to sudo group"
 sudo usermod -aG docker $user
 cat /etc/group | grep docker
 groups $user
