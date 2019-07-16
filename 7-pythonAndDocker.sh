@@ -7,14 +7,12 @@ echo -e "\n***** Intall required packages"
 sudo apt install dirmngr
 sudo apt install gnupg-agent
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7EA0A9C3F273FCD8
-echo -e "Press Enter..."
-read shit
+echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Install Python3"
 sudo apt install python3
 sudo apt install python3-pip
-echo -e "Press Enter..."
-read shit
+echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Install pre-req packages"
 sudo apt update
@@ -23,22 +21,19 @@ sudo apt install ca-certificates
 sudo apt install curl
 sudo apt install software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-echo -e "Press Enter..."
-read shit
+echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Check fingerprint and setup 'stable' repo"
 apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-echo -e "Press Enter..."
-read shit
+echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Install Docker-ce"
 sudo apt update
 sudo apt install docker-ce
 sudo apt install docker-ce-cli
 sudo apt install containerd.io
-echo -e "Press Enter..."
-read shit
+echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Add user to docker group"
 echo -e "Enter user name to add to docker: "
@@ -49,8 +44,7 @@ sudo usermod -aG docker $user
 cat /etc/group | grep docker
 groups $user
 echo -e "*****\n"
-echo -e "Press Enter..."
-read shit
+echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Run Hello World Test"
 docker run hello-world
