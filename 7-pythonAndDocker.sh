@@ -18,7 +18,10 @@ read shit
 
 echo -e "\n***** Install pre-req packages"
 sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https
+sudo apt install ca-certificates
+sudo apt install curl
+sudo apt install software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo -e "Press Enter..."
 read shit
@@ -31,7 +34,9 @@ read shit
 
 echo -e "\n***** Install Docker-ce"
 sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt install docker-ce
+sudo apt install docker-ce-cli
+sudo apt install containerd.io
 echo -e "Press Enter..."
 read shit
 
@@ -49,5 +54,7 @@ read shit
 
 echo -e "\n***** Run Hello World Test"
 docker run hello-world
+
+echo -e "\n***** IF HELLO-WORLD DOESNT RUN, MAY NEED TO EXIT SHELL AND LOG BACK IN\n"
 
 echo -e "\n*****\nPython and Docker installed\n*****"
