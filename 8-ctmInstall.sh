@@ -8,6 +8,7 @@ echo -e "Press Enter... "; read shit
 
 echo -e "\n***** Installing Pre-req Packages"
 sudo apt install python3-setuptools
+pip install --upgrade pip
 pip3 install wheel
 # sudo apt install build-essential
 # sudo apt install python3-dev
