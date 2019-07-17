@@ -5,19 +5,18 @@
 # Just display helpful commands
 display_help ()
 {
-	echo -e "\n*****"
-	echo -e "NEXT STEPS AND HELPFUL COMMANDS:"
+	echo -e "*****"
+	echo -e "Next Steps:"
+	echo -e "  - Run create-tomochain-masternode with the name of your masternode as argument:"
+	echo -e "    \033[1mcreate-tomochain-masternode Atlantis\033[0m"
 	echo -e "\n"
-	echo -e "Run create-tomochain-masternode with the name of your masternode as argument:"
-	echo -e "\033[1mcreate-tomochain-masternode Atlantis\033[0m"
-	echo -e "\n"
-	echo -e "Check to see what block has been processed and how many peers your connected to:"
-	echo -e "docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"eth.blockNumber\""
-	echo -e "docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"net.peerCount\""
+	echo -e "  - Check to see what block has been processed and how many peers your connected to:"
+	echo -e "    docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"eth.blockNumber\""
+	echo -e "    docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"net.peerCount\""
 	echo -e "\n"
 	echo -e "Important docker-compose commands:"
-	echo -e "# Upgrade create-tomochain-masternode (in case new version has come out)"
-	echo -e "pip3 install -U create-tomochain-masternode"
+	echo -e "  - # Upgrade create-tomochain-masternode (in case new version has come out)"
+	echo -e "    pip3 install -U create-tomochain-masternode"
 	echo -e "*****"
 }
 
@@ -63,7 +62,7 @@ run_script ()
 	echo $PATH
 	echo -e "Press Enter... "; read shit
 
-	echo -e "\n*****\nCREATE-TOMOCHAIN-MASTERNODE has been installed\n*****"
+	echo -e "\n*****\nCREATE-TOMOCHAIN-MASTERNODE has been installed\n*****\n"
 	
 	display_help
 }
