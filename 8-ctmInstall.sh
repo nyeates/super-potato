@@ -2,6 +2,11 @@
 
 # See Main Execution below the following functions...
 
+# CTM Info:
+# Docs:     https://docs.tomochain.com/masternode/create-tomochain-masternode/
+# Download: https://github.com/tomochain/create-tomochain-masternode/releases/latest
+# Code:     https://github.com/tomochain/create-tomochain-masternode
+
 # Just display helpful commands
 display_help ()
 {
@@ -16,15 +21,18 @@ display_help ()
 	echo -e "    docker exec \$(docker ps -q -f \"name=master\") tomo attach /tomochain/data/tomo.ipc --exec \"eth.blockNumber\""
 	echo -e "    docker exec \$(docker ps -q -f \"name=master\") tomo attach /tomochain/data/tomo.ipc --exec \"net.peerCount\""
 	echo -e ""
-	echo -e "Docker-compose commands:"
-	echo -e "  STOP docker-compose image"
-	echo -e "    docker-compose stop"
-	echo -e "  DOWNLOAD new image"
-	echo -e "    docker-compose pull"
-	echo -e "  START image again"
-	echo -e "    docker-compose up -d"
-	echo -e "  UPGRADE create-tomochain-masternode (only for executable that auto-makes yaml-file; NOT an image upgrade/download)"
+	echo -e "  UPGRADE create-tomochain-masternode (only for CTM tool; NOT an image upgrade/download; see below)"
 	echo -e "    pip3 install -U create-tomochain-masternode"
+	echo -e ""
+	echo -e "Docker-compose commands:"
+	echo -e "  Restart/Upgrade:"
+	echo -e "    docker-compose stop   #STOP"
+	echo -e "    docker-compose pull   #DOWNLOAD"
+	echo -e "    docker-compose up -d  #START"
+	echo -e "  See running processes:"
+	echo -e "    docker-compose ps"
+	echo -e "  MORE HELP:"
+	echo -e "    docker-compose --help  OR  https://docs.docker.com/compose/reference/overview/"
 	echo -e "*****"
 }
 
@@ -55,8 +63,7 @@ run_script ()
 	echo -e "Press Enter... "; read shit
 
 	echo -e "\n***** Installing and updating create-tomochain-masternode pip3 package"
-	# Instructions: https://docs.tomochain.com/masternode/create-tomochain-masternode/
-	# Download:     https://github.com/tomochain/create-tomochain-masternode/releases/latest
+	# Alternate Download: https://github.com/tomochain/create-tomochain-masternode/releases/latest
 	pip3 install --user create-tomochain-masternode
 	# Upgrade CTM pip install (in case new version has come out)
 	pip3 install -U create-tomochain-masternode
