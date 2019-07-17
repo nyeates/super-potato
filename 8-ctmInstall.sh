@@ -6,7 +6,7 @@
 display_help ()
 {
 	echo -e "*****"
-	echo -e "CTM = create-tomochain-masternode\n"
+	echo -e "CTM = create-tomochain-masternode"
 	echo -e ""
 	echo -e "Next Steps:"
 	echo -e "  Run create-tomochain-masternode with the name of your masternode as argument:"
