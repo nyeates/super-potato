@@ -6,27 +6,29 @@
 display_help ()
 {
 	echo -e "*****"
+	echo -e "CTM = create-tomochain-masternode\n"
+	echo -e ""
 	echo -e "Next Steps:"
-	echo -e "  - Run create-tomochain-masternode with the name of your masternode as argument:"
+	echo -e "  Run create-tomochain-masternode with the name of your masternode as argument:"
 	echo -e "    \033[1mcreate-tomochain-masternode Atlantis\033[0m"
 	echo -e ""
-	echo -e "  - Check to see what block has been processed and how many peers your connected to:"
-	echo -e "    docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"eth.blockNumber\""
-	echo -e "    docker exec \$(docker ps -q -f \"name=tomochain\") tomo attach /tomochain/data/tomo.ipc --exec \"net.peerCount\""
+	echo -e "  Check to see what block has been processed and how many peers your connected to:"
+	echo -e "    docker exec \$(docker ps -q -f \"name=master\") tomo attach /tomochain/data/tomo.ipc --exec \"eth.blockNumber\""
+	echo -e "    docker exec \$(docker ps -q -f \"name=master\") tomo attach /tomochain/data/tomo.ipc --exec \"net.peerCount\""
 	echo -e ""
 	echo -e "Docker-compose commands:"
-	echo -e "  - STOP docker-compose image"
+	echo -e "  STOP docker-compose image"
 	echo -e "    docker-compose stop"
-	echo -e "  - DOWNLOAD new image"
+	echo -e "  DOWNLOAD new image"
 	echo -e "    docker-compose pull"
-	echo -e "  - START image again"
+	echo -e "  START image again"
 	echo -e "    docker-compose up -d"
-	echo -e "  - UPGRADE create-tomochain-masternode (only for executable that auto-makes yaml-file; NOT an image upgrade/download)"
+	echo -e "  UPGRADE create-tomochain-masternode (only for executable that auto-makes yaml-file; NOT an image upgrade/download)"
 	echo -e "    pip3 install -U create-tomochain-masternode"
 	echo -e "*****"
 }
 
-# Install and prepare docker-compose tool
+# Install docker-compose and CTM
 run_script ()
 {
 	# from https://docs.docker.com/compose/install/
@@ -53,6 +55,8 @@ run_script ()
 	echo -e "Press Enter... "; read shit
 
 	echo -e "\n***** Installing and updating create-tomochain-masternode pip3 package"
+	# Instructions: https://docs.tomochain.com/masternode/create-tomochain-masternode/
+	# Download:     https://github.com/tomochain/create-tomochain-masternode/releases/latest
 	pip3 install --user create-tomochain-masternode
 	# Upgrade CTM pip install (in case new version has come out)
 	pip3 install -U create-tomochain-masternode
@@ -68,7 +72,8 @@ run_script ()
 	echo $PATH
 	echo -e "Press Enter... "; read shit
 
-	echo -e "\n*****\nCREATE-TOMOCHAIN-MASTERNODE has been installed\n*****\n"
+	echo -e "\n*****\nCREATE-TOMOCHAIN-MASTERNODE has been installed\nYou must now manually run the next steps...\n*****"
+	echo -e "Press Enter... "; read shit
 	
 	display_help
 }
