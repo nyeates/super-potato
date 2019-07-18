@@ -1,5 +1,5 @@
 # Benchmarking
-echo -e "This script measures the speed of your machine in various ways:
+echo -e "This script measures the speed of your machine in various ways:"
 echo -e "Storage space speeds, CPU, and a generalized benchmark."
 
 # Resources:
