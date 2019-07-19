@@ -1,5 +1,5 @@
 # Benchmarking
-echo -e "This script measures the speed of your machine in various ways:
+echo -e "This script measures the speed of your machine in various ways:"
 echo -e "Storage space speeds, CPU, and a generalized benchmark."
 
 # Resources:
@@ -48,7 +48,7 @@ echo -e "Press Enter... "; read shit
 # Remove the large file
 rm diskbench
 
-echo -e "\n***** " CPU benchmark (want >300 MB/s)
+echo -e "\n***** CPU benchmark (want >300 MB/s)"
 # a simple CPU benchmark
 # For most modern CPUs, you’ll want to see a minimum of 300 MB/s. 
 # Lower than that should prompt you to perform more accurate tests using BYTEmark or even unixbench
