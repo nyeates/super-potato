@@ -24,7 +24,8 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 echo -e "Press Enter... "; read shit
 
 echo -e "\n*****\nCHECK fingerprint and setup 'stable' repo"
-echo -e "\n***** Key results should look like:  9DC8 5822 .... 0EBF CD88"
+echo -e "Key results should look like:  9DC8 5822 .... 0EBF CD88"
+echo -e "*****"
 apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 echo -e "*****\n"
